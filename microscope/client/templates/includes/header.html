@@ -10,7 +10,7 @@
       <a class="brand" href="{{pathFor 'postsList'}}">Microscope</a>
       <div class="nav-collapse in collapse" style="height: auto;">
         <ul class="nav navbar-nav">
-          <li><a href="{{pathFor 'postSubmit'}}">Submit Post</a></li>
+          {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Submit Post</a></li>{{/if}}
         </ul>
         <ul class="nav pull-right">
           {{> loginButtons}}
