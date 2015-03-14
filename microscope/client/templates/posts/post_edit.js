@@ -13,7 +13,6 @@ Template.postEdit.events({
       if(error) {
         alert(error.reason);
       } else {
-        console.log("currentPostId: " + currentPostId);
         Router.go('postPage', {_id: currentPostId});
       }
     });
