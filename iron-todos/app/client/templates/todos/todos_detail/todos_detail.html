@@ -1,3 +1,20 @@
 <template name="TodosDetail">
-  <h1>{{subject}}</h1>
+  {{#if get 'isEditing'}}
+    <form class="form edit-todo">
+      <input type="text" name="subject" id="" value="{{subject}}" placeholder="Subject" />
+      <textarea name="description" placeholder="Description">{{description}}</textarea>
+      <input class="btn" type="submit" value="Save" />
+      {{#linkTo route='todos.detail'}}
+        Cancel
+      {{/linkTo}}
+    </form>
+  {{else}}
+    <h1>{{subject}}</h1>
+
+    <p>{{description}}</p>
+
+    {{#if isMyTodo}}
+      {{#linkTo route="todo.edit"}} Edit {{/linkTo}}
+    {{/if}}
+  {{/if}}
 </template>

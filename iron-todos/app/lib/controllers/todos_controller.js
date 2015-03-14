@@ -4,10 +4,15 @@ TodosController = RouteController.extend({
   },
 
   data: function () {
-    return Todos.findOne({_id: this.params._id})
+    return Todos.findOne({_id: this.params._id});
   },
 
   detail: function () {
     this.render('TodosDetail', { /* data: {} */});
+  },
+
+  edit: function() {
+    this.state.set('isEditing', true);
+    this.render('TodosDetail', {});
   }
 });
