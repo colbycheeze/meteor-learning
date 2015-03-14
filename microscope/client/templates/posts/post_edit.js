@@ -2,7 +2,7 @@ Template.postEdit.events({
   'submit form': function(e) {
     e.preventDefault();
 
-    var currentPostId = this.id;
+    var currentPostId = this._id;
 
     var postProperties = {
       url: $(e.target).find('[name=url]').val(),
@@ -13,6 +13,7 @@ Template.postEdit.events({
       if(error) {
         alert(error.reason);
       } else {
+        console.log("currentPostId: " + currentPostId);
         Router.go('postPage', {_id: currentPostId});
       }
     });
