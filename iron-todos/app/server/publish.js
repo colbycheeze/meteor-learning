@@ -9,5 +9,20 @@ Meteor.publish('todos', function (/* args */) {
 });
 
 Meteor.publish('todo', function (id) {
-  return Todos.find({_id: id});
+  var todo = Todos.findOne({_id: id});
+  return [
+    Meteor.users.find({_id: todo.userId}, {fields: {profile: 1}}),
+    Todos.find({_id: id})
+  ];
+});
+
+Meteor.publish('users', function (/* args */) {
+  return Meteor.users.find({}, {fields: { profile: 1 }});
+});
+
+Meteor.publish('user', function (userId) {
+  return [
+    Meteor.users.find({_id: userId}, {fields: {profile: 1}}),
+    Todos.find({userId: userId})
+  ];
 });

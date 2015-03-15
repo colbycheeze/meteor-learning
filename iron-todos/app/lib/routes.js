@@ -24,3 +24,10 @@ Router.route('/todos/:_id/edit', {
   action: 'edit',
   where: 'client'
 });
+
+Router.route('/users/:_id', {
+  name: 'users.detail',
+  controller: 'UsersController',
+  action: 'detail',
+  where: 'client'
+});

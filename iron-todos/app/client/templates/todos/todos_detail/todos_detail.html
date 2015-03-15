@@ -1,4 +1,16 @@
 <template name="TodosDetail">
+  {{#contentFor 'breadcrumbs'}}
+    {{#unless isMyTodo}}
+      <li>
+      {{#linkTo route='users.detail' _id=user._id}}
+        {{user.profile.name}}
+      {{/linkTo}}
+      <span class="divider">></span>
+      </li>
+    {{/unless}}
+    <li class="active">{{subject}}</li>
+  {{/contentFor}}
+
   {{#if get 'isEditing'}}
     <form class="form edit-todo">
       <input type="text" name="subject" id="" value="{{subject}}" placeholder="Subject" />

@@ -3,6 +3,7 @@ HomeController = RouteController.extend({
 
   subscriptions: function() {
     this.subscribe('todos');
+    this.subscribe('users');
   },
 
   action: function() {

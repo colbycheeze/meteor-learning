@@ -27,7 +27,13 @@ Template.TodosDetail.events({
 Template.TodosDetail.helpers({
   isMyTodo: function() {
     return this.userId === Meteor.userId();
-  }
+  },
+
+  user: function () {
+    var todo = this;
+    return Meteor.users.findOne({_id: todo.userId});
+  },
+
 });
 
 /*****************************************************************************/
