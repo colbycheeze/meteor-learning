@@ -11,3 +11,4 @@ bootstrap
 accounts-ui
 accounts-meteor-developer
 service-configuration
+momentjs:moment

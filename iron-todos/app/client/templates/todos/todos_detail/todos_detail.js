@@ -2,7 +2,7 @@
 /* TodosDetail: Event Handlers */
 /*****************************************************************************/
 Template.TodosDetail.events({
-  'submit form': function(e, tmpl) {
+  'submit form#edit-todo': function(e, tmpl) {
     e.preventDefault();
 
     var subject = tmpl.find('input[name=subject]').value;
