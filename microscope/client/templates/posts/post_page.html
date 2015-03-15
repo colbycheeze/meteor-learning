@@ -2,9 +2,16 @@
   <div class="post-page page">
     {{> postItem}}
     <ul class="comments">
-      {{#each comments}}  
+      {{#each comments}}
         {{> commentItem}}
       {{/each}}
     </ul>
+
+    {{#if currentUser}}
+      {{> commentSubmit}}
+    {{else}}
+      <p>Please login to leave a comment.</p>
+    {{/if}}
+
   </div>
 </template>
