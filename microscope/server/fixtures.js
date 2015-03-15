@@ -17,7 +17,8 @@ if (Posts.find().count() === 0) {
     userId: colby._id,
     author: colby.profile.name,
     url: 'http://colbycheeze.com/blog',
-    submitted: new Date(now - 7 * 3600 * 1000)
+    submitted: new Date(now - 7 * 3600 * 1000),
+    commentsCount: 2
   });
 
   Comments.insert({
@@ -41,7 +42,8 @@ if (Posts.find().count() === 0) {
     url: 'http://colby-todo-woohoo.meteor.com',
     userId: colby._id,
     author: colby.profile.name,
-    submitted: new Date(now - 3 * 3600 * 1000)
+    submitted: new Date(now - 3 * 3600 * 1000),
+    commentsCount: 0
   });
 
   Posts.insert({
@@ -49,7 +51,8 @@ if (Posts.find().count() === 0) {
     url: 'http://meteor.com',
     userId: panth._id,
     author: panth.profile.name,
-    submitted: new Date(now - 10 * 3600 * 1000)
+    submitted: new Date(now - 10 * 3600 * 1000),
+    commentsCount: 0
   });
 
   Posts.insert({
