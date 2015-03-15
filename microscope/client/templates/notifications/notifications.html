@@ -6,16 +6,13 @@
     {{/if}}
     <b class="caret"></b>
   </a>
-  <ul class="notification dropdown-menu">
 
-    <!-- TODO: Refactor this to just do each -->
-    {{#if notificationCount}}
-      {{#each notifications}}
-        {{> notificationItem}}
-      {{/each}}
+  <ul class="notification dropdown-menu">
+    {{#each notifications}}
+      {{> notificationItem}}
     {{else}}
       <li><span>No Notifications</span></li>
-    {{/if}}
+    {{/each}}
   </ul>
 </template>
 
