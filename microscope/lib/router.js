@@ -7,6 +7,8 @@ Router.configure({
   }
 });
 
+Router.route('/submit', { name: 'postSubmit'});
+
 Router.route('/posts/:_id/edit', {
   name: 'postEdit',
   data: function() { return Posts.findOne(this.params._id); }
@@ -57,8 +59,6 @@ PostsListController = RouteController.extend({
 });
 
 Router.route('/:postsLimit?', { name: 'postsList' });
-
-Router.route('/submit', { name: 'postSubmit'});
 
 var requireLogin = function() {
   if (! Meteor.user()) {

@@ -66,7 +66,9 @@ if (Posts.find().count() === 0) {
     url: 'http://themeteorbook.com',
     userId: colby._id,
     author: colby.profile.name,
-    submitted: new Date(now - 12 * 3600 * 1000)
+    submitted: new Date(now - 12 * 3600 * 1000),
+    votes: 0,
+    commentsCount: 0
   });
 
   Posts.insert({
@@ -74,7 +76,9 @@ if (Posts.find().count() === 0) {
     url: 'http://eventedmind.com',
     userId: colby._id,
     author: colby.profile.name,
-    submitted: new Date(now - 6 * 3600 * 1000)
+    submitted: new Date(now - 6 * 3600 * 1000),
+    votes: 0,
+    commentsCount: 0
   });
 
   for (var i = 1; i < 11; i++) {

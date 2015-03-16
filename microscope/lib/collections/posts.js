@@ -61,6 +61,8 @@ Meteor.methods({
     var post = _.extend(postAttributes, {
       userId: user._id,
       author: user.username,
+      commentsCount: postAttributes.commentsCount || 0,
+      votes: postAttributes.votes || 0,
       submitted: new Date()
     });
 
