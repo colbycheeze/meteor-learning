@@ -70,4 +70,15 @@ if (Posts.find().count() === 0) {
     author: colby.profile.name,
     submitted: new Date(now - 6 * 3600 * 1000)
   });
+
+  for (var i = 1; i < 11; i++) {
+    Posts.insert({
+      title: 'Test post #' + i,
+      author: colby.profile.name,
+      userId: colby._id,
+      url: 'http://google.com?q=test-' + i,
+      submitted: new Date(now - i * 3600 * 1000 * 50),
+      commentsCount: 0
+    });
+  }
 }
