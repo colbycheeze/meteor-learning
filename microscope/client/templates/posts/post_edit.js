@@ -28,7 +28,7 @@ Template.postEdit.events({
       if(error) {
         throwError(error.reason);
       } else {
-        Router.go('postPage', {_id: currentPostId});
+        Router.go('home', {_id: currentPostId});
       }
     });
   },
