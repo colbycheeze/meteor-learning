@@ -1,3 +1,10 @@
+Template.postItem.events({
+  'click .upvote': function(e, template) {
+    e.preventDefault();
+    Meteor.call('upvote', this._id);
+  }
+});
+
 Template.postItem.helpers({
   ownPost: function() {
     return this.userId === Meteor.userId();

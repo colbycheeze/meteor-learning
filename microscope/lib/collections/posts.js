@@ -22,6 +22,22 @@ validatePost = function(post) {
 }
 
 Meteor.methods({
+  upvote: function(postId) {
+    check(this.userId, String);
+    check(postId, String);
+    var post = Posts.findOne(postId);
+
+    if(!post)
+      throw new Meteor.Error('invalid', 'Post not found');
+    if(_.include(post.upvoters, this.userId))
+      throw new Meteor.Error('invalid', 'Already upvoted this post');
+
+    Posts.update(post._id, {
+      $addToSet: {upvoters: this.userId},
+      $inc: {votes: 1}
+    });
+  },
+
   postInsert: function(postAttributes) {
     check(Meteor.userId(), String);
     check(postAttributes, {

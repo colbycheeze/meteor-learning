@@ -18,6 +18,8 @@ if (Posts.find().count() === 0) {
     author: colby.profile.name,
     url: 'http://colbycheeze.com/blog',
     submitted: new Date(now - 7 * 3600 * 1000),
+    upvoters: [],
+    votes: 0,
     commentsCount: 2
   });
 
@@ -43,6 +45,8 @@ if (Posts.find().count() === 0) {
     userId: colby._id,
     author: colby.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000),
+    upvoters: [],
+    votes: 0,
     commentsCount: 0
   });
 
@@ -52,6 +56,8 @@ if (Posts.find().count() === 0) {
     userId: panth._id,
     author: panth.profile.name,
     submitted: new Date(now - 10 * 3600 * 1000),
+    upvoters: [],
+    votes: 0,
     commentsCount: 0
   });
 
@@ -78,6 +84,8 @@ if (Posts.find().count() === 0) {
       userId: colby._id,
       url: 'http://google.com?q=test-' + i,
       submitted: new Date(now - i * 3600 * 1000 * 50),
+      upvoters: [],
+      votes: 0,
       commentsCount: 0
     });
   }
